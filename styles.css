@@ -11,24 +11,100 @@
 }
 
 .steps { 
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family:'Times New Roman', Times, serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .carbonara {
   color: green;
-  background-color: rgba(255, 0, 0, 0.19);
 }
 
 .fried-rice {
   color: black;
-  background-color: yellow;
 }
 
 .flammekueche {
-  color: rgb(255, 192, 203);
-  background-color: rgb(245, 222, 179, 0.5);
+  color: beige;
 }
 
-.funny-font {
-  font-family: monospace;
+li .flammekueche {
+  color: rgb(180, 82, 98);
+}
+
+.big {
+  font-size: 22pt;
+}
+
+.limit-width {
+  display: inline-block;
+}
+
+.carbonara-background {
+  background-color: beige;
+}
+
+.fried-rice-background {
+  background-color: rgba(219, 219, 7, 0.853);
+}
+
+.flammekueche-background {
+  background-color: pink;
+}
+
+body.cooking-background {
+  background: linear-gradient(#f8f4e5, #eae0c8);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  position: relative;
+  height: 100vh; /* Set the height to cover the entire viewport */
+}
+
+.cooking-background::before {
+  content: '';
+  position: fixed;
+  top: 30%;
+  left: 0;
+  width: 117%;
+  height: 45%;
+  background: url('./images/cooking-animal.gif') repeat; /* Replace 'your-cooking-animation.gif' with the path to your actual cooking animation */
+  opacity: 0.5; /* Adjust the opacity as needed */
+  z-index: -1; /* Place the background behind other content */
+  animation: cookingAnimation 10s infinite linear;
+}
+
+@keyframes cookingAnimation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+h1.centered {
+  position: relative;
+  z-index: 1; /* Place the heading above the background */
+}
+
+body {
+  position: relative;
+  margin: 0; /* Remove default body margin */
+}
+
+.home-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 15px 20px;
+  background-color: #f8f4e5; /* Background color */
+  color: #333; /* Text color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Ensure the button appears above other content */
+}
+
+.home-button:hover {
+  background-color: #eae0c8; /* Hover background color */
 }
